@@ -1,13 +1,13 @@
 module alu(
-	input [1:0] a,b,
-	input [2:0] operation,
-	output reg [1:0] result,
-	output reg overflow
-	);
+	input 		[1:0] a,b,
+	input 		[2:0] operation,
+	output reg 	[1:0] result,
+	output reg 			overflow
+);
 	
 	always begin 
 	
-		overflow = 1'b0;
+		overflow = 1'b0; 
 	
 		case(operation)
 		
@@ -29,13 +29,9 @@ module alu(
 			end
 			
 			3'b100: begin
-				result = a & b;
-			end
-			
-			
-			3'b101: begin
 				result = a | b;
 			end
+			
 						
 			default: begin
 			{overflow, result}= 3'b000;
