@@ -1,0 +1,1 @@
+This section will be updated with extra projects that are not part of the laboratory. We invite contributions, so if you have a valuable project, you can share it with us by opening a pull request!
