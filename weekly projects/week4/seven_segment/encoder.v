@@ -1,3 +1,7 @@
+/*
+	to encode the 3 number to the correct 7 bits of seven segment
+*/
+
 module encoder(
 	input 	[2:0]		count,
 	output reg [6:0] 	encoded_count

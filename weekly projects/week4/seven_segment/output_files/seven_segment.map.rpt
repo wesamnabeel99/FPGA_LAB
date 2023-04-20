@@ -1,5 +1,5 @@
 Analysis & Synthesis report for seven_segment
-Wed Apr 19 13:32:41 2023
+Thu Apr 20 21:48:55 2023
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -42,7 +42,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Apr 19 13:32:41 2023      ;
+; Analysis & Synthesis Status        ; Successful - Thu Apr 20 21:48:55 2023      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; seven_segment                              ;
 ; Top-level Entity Name              ; seven_segment                              ;
@@ -258,7 +258,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Wed Apr 19 13:32:40 2023
+    Info: Processing started: Thu Apr 20 21:48:53 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off seven_segment -c seven_segment
 Info (11104): Parallel Compilation has detected 16 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 8 of the 8 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file counter.v
@@ -283,9 +283,9 @@ Info (21057): Implemented 63 device resources after synthesis - the final resour
     Info (21059): Implemented 7 output pins
     Info (21061): Implemented 53 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4667 megabytes
-    Info: Processing ended: Wed Apr 19 13:32:41 2023
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 4666 megabytes
+    Info: Processing ended: Thu Apr 20 21:48:55 2023
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

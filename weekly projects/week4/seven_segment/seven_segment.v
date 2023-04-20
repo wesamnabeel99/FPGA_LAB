@@ -1,3 +1,7 @@
+/*
+	this is the main module that have the other sub-modules inside.
+*/
+
 module seven_segment(
 	input 			clk,rst,up_down,
 	output [6:0] 	encoded_value
