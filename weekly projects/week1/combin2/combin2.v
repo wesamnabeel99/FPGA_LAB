@@ -1,3 +1,7 @@
+/*
+	a simple program to demonstrate the use of different logical operations
+*/
+
 module combin2(
 	input in1,
 	input in2,
