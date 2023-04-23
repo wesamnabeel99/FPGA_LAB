@@ -1,3 +1,9 @@
+/*
+	a simple implementation of alu that has 5 operations (a+b, a-b, a+1, a and b, a or b), it was implemented using a selector called (operation)
+	inputs- a,b: 2 bits numbers, operation: a selector to choose the desired operation, it is a 3 bits selector since we have 5 operations, so we can choose up to 8 operaions.
+	outputs: result: the result of the performed operation. overflow: to check whether an overflow occured or not.
+*/
+
 module alu(
 	input 		[1:0] a,b,
 	input 		[2:0] operation,
