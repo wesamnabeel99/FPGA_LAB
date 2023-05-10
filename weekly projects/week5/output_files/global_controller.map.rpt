@@ -1,5 +1,5 @@
-Analysis & Synthesis report for seven_segment
-Tue Apr 25 02:03:00 2023
+Analysis & Synthesis report for global_controller
+Wed May 10 12:13:16 2023
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -13,10 +13,13 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Inverted Register Statistics
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. State Machine - |global_controller|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |global_controller
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -42,16 +45,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 25 02:03:00 2023      ;
+; Analysis & Synthesis Status        ; Successful - Wed May 10 12:13:16 2023      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
-; Revision Name                      ; seven_segment                              ;
-; Top-level Entity Name              ; seven_segment                              ;
+; Revision Name                      ; global_controller                          ;
+; Top-level Entity Name              ; global_controller                          ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 53                                         ;
-;     Total combinational functions  ; 53                                         ;
-;     Dedicated logic registers      ; 36                                         ;
-; Total registers                    ; 36                                         ;
-; Total pins                         ; 10                                         ;
+; Total logic elements               ; 10                                         ;
+;     Total combinational functions  ; 10                                         ;
+;     Dedicated logic registers      ; 4                                          ;
+; Total registers                    ; 4                                          ;
+; Total pins                         ; 16                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -65,7 +68,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP3C16F484C6       ;                    ;
-; Top-level entity name                                                      ; seven_segment      ; seven_segment      ;
+; Top-level entity name                                                      ; global_controller  ; global_controller  ;
 ; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -163,59 +166,77 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                        ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                          ; Library ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
-; counter.v                        ; yes             ; User Verilog HDL File  ; F:/FPGA_2023B/weekly projects/week4/seven_segment/counter.v           ;         ;
-; seven_segment.v                  ; yes             ; User Verilog HDL File  ; F:/FPGA_2023B/weekly projects/week4/seven_segment/seven_segment.v     ;         ;
-; encoder.v                        ; yes             ; User Verilog HDL File  ; F:/FPGA_2023B/weekly projects/week4/seven_segment/encoder.v           ;         ;
-; frequency_divider.v              ; yes             ; User Verilog HDL File  ; F:/FPGA_2023B/weekly projects/week4/seven_segment/frequency_divider.v ;         ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                            ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+; global_controller.v              ; yes             ; User Verilog HDL File  ; F:/FPGA_2023B/weekly projects/week5/global_controller.v ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 53        ;
-;                                             ;           ;
-; Total combinational functions               ; 53        ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 8         ;
-;     -- 3 input functions                    ; 12        ;
-;     -- <=2 input functions                  ; 33        ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 22        ;
-;     -- arithmetic mode                      ; 31        ;
-;                                             ;           ;
-; Total registers                             ; 36        ;
-;     -- Dedicated logic registers            ; 36        ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 10        ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-; Maximum fan-out node                        ; rst~input ;
-; Maximum fan-out                             ; 36        ;
-; Total fan-out                               ; 289       ;
-; Average fan-out                             ; 2.65      ;
-+---------------------------------------------+-----------+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 10           ;
+;                                             ;              ;
+; Total combinational functions               ; 10           ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 6            ;
+;     -- 3 input functions                    ; 0            ;
+;     -- <=2 input functions                  ; 4            ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 10           ;
+;     -- arithmetic mode                      ; 0            ;
+;                                             ;              ;
+; Total registers                             ; 4            ;
+;     -- Dedicated logic registers            ; 4            ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 16           ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+; Maximum fan-out node                        ; state.state3 ;
+; Maximum fan-out                             ; 7            ;
+; Total fan-out                               ; 70           ;
+; Average fan-out                             ; 1.52         ;
++---------------------------------------------+--------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
-; |seven_segment             ; 53 (0)            ; 36 (0)       ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |seven_segment                      ; work         ;
-;    |counter:u1|            ; 3 (3)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |seven_segment|counter:u1           ; work         ;
-;    |encoder:u3|            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |seven_segment|encoder:u3           ; work         ;
-;    |frequency_divider:u2|  ; 43 (43)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |seven_segment|frequency_divider:u2 ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |global_controller         ; 10 (10)           ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |global_controller  ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------+
+; State Machine - |global_controller|state                               ;
++--------------+--------------+--------------+--------------+------------+
+; Name         ; state.state3 ; state.state2 ; state.state1 ; state.init ;
++--------------+--------------+--------------+--------------+------------+
+; state.init   ; 0            ; 0            ; 0            ; 0          ;
+; state.state1 ; 0            ; 0            ; 1            ; 1          ;
+; state.state2 ; 0            ; 1            ; 0            ; 1          ;
+; state.state3 ; 1            ; 0            ; 0            ; 1          ;
++--------------+--------------+--------------+--------------+------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; state~4                               ; Lost fanout        ;
+; state~5                               ; Lost fanout        ;
+; Total Number of Removed Registers = 2 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -223,24 +244,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 36    ;
-; Number of registers using Synchronous Clear  ; 32    ;
+; Total registers                              ; 4     ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 36    ;
+; Number of registers using Asynchronous Clear ; 4     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; frequency_divider:u2|trigger           ; 4       ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; 8:1                ; 4 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |global_controller|Selector0 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |global_controller ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; init           ; 00    ; Unsigned Binary                                          ;
+; state1         ; 01    ; Unsigned Binary                                          ;
+; state2         ; 10    ; Unsigned Binary                                          ;
+; state3         ; 11    ; Unsigned Binary                                          ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------+
@@ -258,34 +291,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Apr 25 02:02:58 2023
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off seven_segment -c seven_segment
+    Info: Processing started: Wed May 10 12:13:15 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off global_controller -c global_controller
 Info (11104): Parallel Compilation has detected 16 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 8 of the 8 physical processors detected instead.
-Info (12021): Found 1 design units, including 1 entities, in source file counter.v
-    Info (12023): Found entity 1: counter
-Info (12021): Found 1 design units, including 1 entities, in source file seven_segment.v
-    Info (12023): Found entity 1: seven_segment
-Info (12021): Found 1 design units, including 1 entities, in source file encoder.v
-    Info (12023): Found entity 1: encoder
-Info (12021): Found 1 design units, including 1 entities, in source file frequency_divider.v
-    Info (12023): Found entity 1: frequency_divider
-Info (12127): Elaborating entity "seven_segment" for the top level hierarchy
-Info (12128): Elaborating entity "counter" for hierarchy "counter:u1"
-Info (12128): Elaborating entity "frequency_divider" for hierarchy "frequency_divider:u2"
-Info (12128): Elaborating entity "encoder" for hierarchy "encoder:u3"
-Info (13000): Registers with preset signals will power-up high
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (12021): Found 1 design units, including 1 entities, in source file global_controller.v
+    Info (12023): Found entity 1: global_controller
+Info (12127): Elaborating entity "global_controller" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 63 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 7 output pins
-    Info (21061): Implemented 53 logic cells
+Info (21057): Implemented 26 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 10 output pins
+    Info (21061): Implemented 10 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4667 megabytes
-    Info: Processing ended: Tue Apr 25 02:03:00 2023
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Wed May 10 12:13:16 2023
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 
