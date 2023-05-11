@@ -25,8 +25,8 @@ Step 6: choose a name for your project, and name for top level design entity
 Step 7: if you have previously designed components, you can add the files here to use them, else you can skip this
 ![image](https://user-images.githubusercontent.com/64896000/226453935-30951803-82b1-4293-a178-cacb59667a0c.png)
 
-Step 8: configure the family & design settings, for me I chose `Family III` and the device is `EP3C8OU484C6`
-![image](https://user-images.githubusercontent.com/64896000/226454338-d9147c35-a3e1-4a8a-8b42-21b0c8e4c803.png)
+Step 8: configure the family & design settings, for me I chose `Cyclone III` and the device is `EP3C16F484C6`
+![image](https://github.com/wesamnabeel99/FPGA_LAB/assets/64896000/88f0d8ab-105f-4063-806f-ec5d0fb10ceb)
 
 Step 9: if you're happy with the configuration click `Finish`
 
