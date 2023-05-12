@@ -42,29 +42,30 @@ module global_controller(
 			endcase
 		end
 	end
-			always@(state) begin
-				case(state)
-					init: begin
-						leds <= 10'b00_0000_0001;
-					end
-					
-					state1: begin
-						leds <= 10'b00_000_0110;
-					end
-					
-					state2: begin
-						leds <= 10'b00_0011_1000;
-					end
-					
-					state3: begin
-						leds <= 10'b11_1100_0000;
-					end
-					
-					default: begin
-						leds <= 10'b00_0000_0000;
-					end
-				endcase
+	
+	always@(state) begin
+		case(state)
+			init: begin
+				leds <= 10'b00_0000_0001;
 			end
+			
+			state1: begin
+				leds <= 10'b00_000_0110;
+			end
+			
+			state2: begin
+				leds <= 10'b00_0011_1000;
+			end
+			
+			state3: begin
+				leds <= 10'b11_1100_0000;
+			end
+			
+			default: begin
+				leds <= 10'b00_0000_0000;
+			end
+		endcase
+	end
 			
 			
 					
