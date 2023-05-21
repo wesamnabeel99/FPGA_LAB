@@ -17,8 +17,11 @@ Step 4: Setup your hardware device
 
 ![image](https://user-images.githubusercontent.com/64896000/234134579-4f9bb79f-22c2-4d39-a00c-8ceac8525f53.png)
 
-Step 5: If you have FPGA connected to your computer, you should see it in the list, double click on it and it'll be added (Note: I don't have it connected right now)
+Step 5: If you have FPGA connected to your computer, you should see it in the list, double click on it and it'll be added
+![image](https://github.com/wesamnabeel99/FPGA_LAB/assets/64896000/faccddb2-2d86-4cce-8f10-f403de43acfd)
 
+
+If it's not connected or the driver is not installed you'll see empty list like this:
 ![image](https://user-images.githubusercontent.com/64896000/234134666-c824a0f7-1a93-4065-83cb-ad7cadcd5bcd.png)
 
 Step 6: After selecting the hardware, you can select your program then click `Start`
