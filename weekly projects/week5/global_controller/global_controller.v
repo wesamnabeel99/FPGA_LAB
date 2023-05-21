@@ -1,6 +1,6 @@
 module global_controller(
 	input clk, rst,
-	input f1,f2,f3,f4,
+	input flag1,flag2,flag3,flag4,
 	output reg [9:0] leds
 );
 
@@ -13,25 +13,25 @@ module global_controller(
 		end else begin
 			case(state)
 				init: begin
-					if (f1) begin
+					if (flag1) begin
 						state <= state1;
 						end
 					end
 					
 					state1: begin
-						if (f2) begin
+						if (flag2) begin
 							state <= state2;
 							end
 						end
 						
 					state2: begin
-						if (f3) begin
+						if (flag3) begin
 							state <= state3;
 						end
 					end
 					
 					state3: begin
-						if (f4) begin
+						if (flag4) begin
 							state <= init;
 						end
 					end
