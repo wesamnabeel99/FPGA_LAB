@@ -1,0 +1,12 @@
+module trigger_generator(
+
+	input switch
+);
+
+	always begin
+		if (switch == 1)
+			
+		end
+		
+	end
+endmodule

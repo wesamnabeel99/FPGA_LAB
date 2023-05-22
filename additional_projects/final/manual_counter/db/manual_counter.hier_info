@@ -1,0 +1,37 @@
+|manual_counter
+sliding_switch => sliding_switch.IN1
+encoded_count[0] << encoder:u2.encoded_count
+encoded_count[1] << encoder:u2.encoded_count
+encoded_count[2] << encoder:u2.encoded_count
+encoded_count[3] << encoder:u2.encoded_count
+encoded_count[4] << encoder:u2.encoded_count
+encoded_count[5] << encoder:u2.encoded_count
+encoded_count[6] << encoder:u2.encoded_count
+
+
+|manual_counter|trigger_generator:comb_3
+switch => trigger.DATAIN
+trigger <= switch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|manual_counter|counter:u1
+trigger => count[0]$latch.LATCH_ENABLE
+trigger => count[1]$latch.LATCH_ENABLE
+count[0] <= count[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|manual_counter|encoder:u2
+count[0] => Decoder0.IN1
+count[0] => encoded_count[2].DATAIN
+count[1] => Decoder0.IN0
+count[1] => encoded_count[0].DATAIN
+encoded_count[0] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+encoded_count[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+encoded_count[2] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+encoded_count[3] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+encoded_count[4] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+encoded_count[5] <= <GND>
+encoded_count[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+

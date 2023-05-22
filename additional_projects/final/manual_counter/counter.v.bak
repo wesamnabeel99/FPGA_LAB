@@ -1,0 +1,11 @@
+module counter(
+	input switch,
+	output reg [1:0] count
+);
+
+	always@(negedge switch) begin
+		count <= count + 1;
+	end
+
+endmodule
+
