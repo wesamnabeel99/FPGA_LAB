@@ -1,3 +1,8 @@
+/*
+	write a verilog program to implement a manual counter controlled by a sliding switch, the count should increase when the sliding switch goes down,
+	the output should be displayed on seven segment display
+*/
+
 module manual_counter(
 	input sliding_switch,
 	output [6:0] encoded_count
